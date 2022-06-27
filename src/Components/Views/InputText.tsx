@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import style from './InputTest.css';
+import style from './InputText.css';
 
 interface InputTextProps {
   className?: string;
