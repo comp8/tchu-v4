@@ -9,7 +9,7 @@
   "mode_simpleGame": "간편 추첨",
   "mode_numberGame": "숫자 투표",
   "mode_desc_simpleGame": "채팅에 참여하는 모든 시청자를 대상으로 추첨합니다.",
-  "mode_desc_numberGame": "채팅을 통해 투표를 진행합니다.\n특정 선택지를 고른 시청자들을 대상으로 추첨할 수 있습니다.\n시청자 참여방법: <l>채팅</l>창에 ",
+  "mode_desc_numberGame": "채팅을 통해 투표를 진행합니다.\n특정 선택지를 고른 시청자들을 대상으로 추첨할 수 있습니다.\n시청자 참여방법: 채팅창에 ",
   "voteKeyword": "!투표 1",
   "Search result: Not found": "검색 결과: 없음",
   "Roll Button": "추첨",
