@@ -49,7 +49,7 @@ export default function App(props: AppProp) {
               <p>{t('waiting for validation')}</p>
             ) : (
               !channel ? (
-                <AppIntro />
+                <AppIntro myChannel={login}/>
               ) : (
                 <>
                   <RemoveTrailingSlash />

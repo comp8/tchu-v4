@@ -85,11 +85,11 @@ export default function NewGame(props: NewGameProps) {
           <h3 className={style.descTitle}>
             {t('mode_numberGame')}
           </h3>
-          {
-            t('mode_desc_numberGame').split('\n').map(str => <p className={style.descText}>{str}</p>)
-          }
+          {/* {
+            t('mode_desc_numberGame', { voteKeyword: t('voteKeyword') }).split('\n').map(str => <p className={style.descText}>{str}</p>)
+          } */}
           <p className={style.descText}>
-            <code>{t('voteKeyword')}</code>
+            {t('mode_desc_numberGame')} <code>{t('voteKeyword')}</code>
           </p>
         </li>
       </ul>

@@ -1,0 +1,41 @@
+.wrapper {
+  padding: 1em;
+  grid-area: main;
+}
+
+.appDesc {
+  padding: 1em;
+  text-align: center;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttons>*:first-child {
+  padding: 2em 1em;
+  border-color: var(--global-color-theme);
+  background-color: var(--global-color-theme);
+  color: var(--global-color-white);
+  text-decoration: none;
+}
+.buttons>*:first-child:hover {
+  text-decoration: underline;
+}
+
+.buttons>* {
+  flex: 1;
+  padding: 1em;
+  border-radius: 1px;
+  border-style: solid;
+  width: 20em;
+  text-align: center;
+  margin: 0.5em;
+}
+
+.btnMine {}
+
+.btnOther {}
