@@ -10,6 +10,7 @@ import { VoteRules } from "./VoteUtils";
 import style from './NewGame.css';
 import StyledButton from "../Views/StyledButton";
 import Config from "../../config";
+import { useTranslation } from "react-i18next";
 
 interface NewGameProps {
   className?: string;
@@ -43,6 +44,8 @@ export default function NewGame(props: NewGameProps) {
     createNewGame('NUMBER_GAME');
   }, []);
 
+  const { t } = useTranslation();
+
   return (
     <div className={`${style.wrapper} ${props.className || ''}`}>
       <ul className={style.gameList}>
@@ -54,7 +57,7 @@ export default function NewGame(props: NewGameProps) {
             hoverEffect="invert"
             onClick={handleClick_SimpleGame}
           >
-            <span className={style.btn}><span className="icon-gift"></span><span className={style.btnText}>간편 추첨</span></span>
+            <span className={style.btn}><span className="icon-gift"></span><span className={style.btnText}>{t('mode_simpleGame')}</span></span>
           </StyledButton>
         </li>
         <li>
@@ -65,32 +68,28 @@ export default function NewGame(props: NewGameProps) {
             hoverEffect="invert"
             onClick={handleClick_NumberGame}
           >
-            <span className={style.btn}><span className="icon-number"></span><span className={style.btnText}>숫자 투표</span></span>
+            <span className={style.btn}><span className="icon-number"></span><span className={style.btnText}>{t('mode_numberGame')}</span></span>
           </StyledButton>
         </li>
       </ul>
       <ul className={style.desc}>
         <li>
           <h3 className={style.descTitle}>
-            {'간편 추첨'}
+            {t('mode_simpleGame')}
           </h3>
           <p className={style.descText}>
-            {'채팅에 참여하는 모든 시청자를 대상으로 추첨합니다.'}
+            {t('mode_desc_simpleGame')}
           </p>
         </li>
         <li>
           <h3 className={style.descTitle}>
-            {'숫자 투표'}
+            {t('mode_numberGame')}
           </h3>
+          {
+            t('mode_desc_numberGame').split('\n').map(str => <p className={style.descText}>{str}</p>)
+          }
           <p className={style.descText}>
-            {'채팅을 통해 투표를 진행합니다.'}
-          </p>
-          <p className={style.descText}>
-            {'특정 선택지를 고른 시청자들을 대상으로 추첨할 수 있습니다.'}
-          </p>
-          <p className={style.descText}>
-            {'시청자 참여방법: 채팅창에 '}
-            <code>{'!투표 (숫자)'}</code>
+            <code>{t('voteKeyword')}</code>
           </p>
         </li>
       </ul>

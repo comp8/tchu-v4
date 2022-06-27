@@ -11,6 +11,7 @@ import InputForm from "./InputForm";
 import style from './VoteControlPanel.css';
 import StyledButton from "./StyledButton";
 import Config from "../../config";
+import { useTranslation } from "react-i18next";
 
 interface VoteControlPanelProps {
   onStarted?: () => void;
@@ -64,6 +65,8 @@ export default function VoteControlPanel(props: VoteControlPanelProps) {
     dispatch(Actions.Votes.Close());
   }, []);
 
+  const { t } = useTranslation();
+
   if (!current) {
     return null;
   }
@@ -77,7 +80,7 @@ export default function VoteControlPanel(props: VoteControlPanelProps) {
           hoverEffect="pulse"
           onClick={handleStart}
         >
-          <span className={`${style.btn} ${style.btnStart}`}>시작</span>
+          <span className={`${style.btn} ${style.btnStart}`}>{t('Start Vote')}</span>
         </StyledButton>
         <StyledButton
           backColor={Config.style.defaultTheme["color-back-1"]}
@@ -86,7 +89,7 @@ export default function VoteControlPanel(props: VoteControlPanelProps) {
           hoverEffect="normal"
           onClick={handleStop}
         >
-          <span className={`${style.btn} ${style.btnStop}`}>종료</span>
+          <span className={`${style.btn} ${style.btnStop}`}>{t('Stop Vote')}</span>
         </StyledButton>
       </div>
       {

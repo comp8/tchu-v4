@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import Config from "../config";
 
 interface HomeProps {
@@ -25,14 +26,15 @@ export default function Home(props: HomeProps) {
     client_id: Config.Twitch.clientId,
   }).toString();
 
+  const {t} = useTranslation();
   return (
     <>
       <p>
         {
-          '트위치 투표 추첨기'
+          t('appName')
         }
       </p>
-      <a href={login_url}>들어가기</a>
+      <a href={login_url}>{t('Login')}</a>
     </>
   );
 };

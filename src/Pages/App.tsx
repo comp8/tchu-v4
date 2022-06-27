@@ -12,6 +12,7 @@ import { useBadgeSets as useBadgeSet, useBroadcasterInfo, useChatClient, useTwit
 import style from './App.css';
 import AppIntro from "./AppIntro";
 import ChannelHeader from "../Components/ChannelHeader";
+import { useTranslation } from "react-i18next";
 
 interface AppProp {
 
@@ -28,6 +29,7 @@ export default function App(props: AppProp) {
   const chatClient = useChatClient({ channel });
 
   const dispatch = useDispatch();
+  const { t } = useTranslation();
 
   useEffect(() => {
     dispatch(Actions.Chats.Clear());
@@ -44,7 +46,7 @@ export default function App(props: AppProp) {
           }
           {
             !login || !user_id ? (
-              <p>Waiting for validation...</p>
+              <p>{t('waiting for validation')}</p>
             ) : (
               !channel ? (
                 <AppIntro />

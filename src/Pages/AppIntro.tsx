@@ -1,10 +1,13 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 export default function AppIntro() {
+  const {t} = useTranslation();
+
   return (
     <div>
       {
-        `설명이 들어갈 자리`
+        t('appDesc')
       }
     </div>
   );

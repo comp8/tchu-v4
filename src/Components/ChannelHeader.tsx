@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import Config from "../config";
 
@@ -25,6 +26,8 @@ export default function ChannelHeader(props: Props) {
   };
 
   const handleClickLogout = () => logout();
+
+  const { t } = useTranslation();
 
   return (
     <header className={`${props.className} ${style.wrapper}`}>
@@ -55,7 +58,7 @@ export default function ChannelHeader(props: Props) {
         hoverEffect="normal"
         onClick={handleClickLogout}
       >
-        <div className={style.logoutBtn}>Logout</div>
+        <div className={style.logoutBtn}>{t('Logout')}</div>
       </StyledButton>
     </header>
   );

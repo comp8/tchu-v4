@@ -10,6 +10,7 @@ import StyledButton from "../Views/StyledButton";
 import Config from "../../config";
 import { useDispatch } from "react-redux";
 import Actions from "../../Store/actions";
+import { useTranslation } from "react-i18next";
 
 interface GameProps {
   className?: string;
@@ -30,6 +31,8 @@ export default function Game(props: GameProps) {
     dispatch(Actions.Votes.Clear());
   }, []);
 
+  const {t} = useTranslation();
+
   return (
     <div className={`${props.className} ${style.wrapper}`}>
       <VoterList className={style.leftPanel} {...{ current, selectedVoteItem }} />
@@ -44,7 +47,7 @@ export default function Game(props: GameProps) {
           >
             <span className={style.btnHome}>
               <span className="icon-home"></span>
-              <span>처음으로</span>
+              <span>{t('Home')}</span>
             </span>
           </StyledButton>
         </nav>

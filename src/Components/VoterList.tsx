@@ -9,6 +9,7 @@ import style from './VoterList.css';
 import { testKeyword } from "../common/utils";
 import VoterCounter from "./VoterCounter";
 import Config from "../config";
+import { useTranslation } from "react-i18next";
 
 interface VoterListProps {
   current: IVoteSession;
@@ -54,6 +55,8 @@ export default function VoterList(props: VoterListProps) {
     setKeyword(val.replace(/ /g, ''));
   }, []);
 
+  const { t } = useTranslation();
+
   return (
     <div className={`${style.wrapper} ${props.className || ''}`}>
       <div className={style.header}>
@@ -63,7 +66,7 @@ export default function VoterList(props: VoterListProps) {
       <div className={style.content}>
         <ul className='voter-list__users'>
           {
-            keyword && userElements.length === 0 ? <p>not found</p> : null
+            keyword && userElements.length === 0 ? <p>{t('Search result: Not found')}</p> : null
           }
           {
             userElements?.map(({ id, color, dname, uname, subs, founder }) =>
@@ -81,7 +84,7 @@ export default function VoterList(props: VoterListProps) {
           style={{ width: '100%' }}
           hoverEffect='pulse'
         >
-          <div className={style.rollBtn}>추첨</div>
+          <div className={style.rollBtn}>{t('Roll Button')}</div>
         </StyledButton>
       </div>
     </div>
