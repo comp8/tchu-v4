@@ -1,0 +1,25 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: 19em 1fr;
+  grid-template-rows: 100%;
+  grid-template-areas: "left right";
+  justify-content: stretch;
+}
+
+.leftPanel {
+  grid-area: left;
+}
+
+.rightPanel {
+  grid-area: right;
+  border-left: 1px solid var(--global-color-gray-light-2);
+}
+
+.navBar {
+  margin: 1em;
+
+}
+
+.btnHome {
+  padding: 1em;
+}

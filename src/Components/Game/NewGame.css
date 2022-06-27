@@ -1,0 +1,47 @@
+.wrapper {
+  margin: 1.0em;
+}
+
+.gameList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 1.6em;
+}
+
+.gameList>li {
+  margin-bottom: 0.5em;
+}
+
+.gameList>li>* {
+  width: 100%;
+}
+
+.btn {
+  padding: 0.8em;
+  width: 100%;
+}
+.btnText {
+  margin-left: 1em;
+}
+
+.desc {
+  padding: 1em;
+  margin-top: 3em;
+}
+.desc li {
+  margin-bottom: 4em;
+}
+.descTitle {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+.descText {
+  font-size: 1.0em;
+  margin-left: 1.0em;;
+}
+.descText code {
+  color: var(--global-color-theme-2);
+  font-weight: bold;
+  margin: auto 0.5em;
+}

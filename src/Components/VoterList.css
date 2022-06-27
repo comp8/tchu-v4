@@ -1,0 +1,42 @@
+.wrapper {
+  display: grid;
+  justify-content: stretch;
+  grid-template-columns: 100%;
+  grid-template-rows: min-content 1fr min-content;
+  grid-template-areas:
+    "header"
+    "content"
+    "footer";
+  background-color: var(--global-color-gray-light-3);
+}
+
+.header {
+  grid-area: header;
+  overflow: hidden;
+}
+
+.content {
+  grid-area: content;
+  overflow: hidden scroll;
+  height: 100%;
+}
+
+.footer {
+  grid-area: footer;
+  overflow: hidden;
+}
+
+.content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.content :global(.voter-list__users)>li {
+  padding: 0.5em 1em;
+}
+
+.rollBtn {
+  font-size: 1.4em;
+  padding: 1em;
+}

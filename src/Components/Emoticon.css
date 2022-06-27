@@ -1,0 +1,12 @@
+.wrapper {
+  --size: 2em;
+  display: inline-block;
+  width: var(--size);
+  height: var(--size);
+  overflow: hidden;
+  margin: -0.5em -0.1em;
+}
+
+img.emoticon {
+  width: 100%;
+}

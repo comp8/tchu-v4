@@ -1,0 +1,58 @@
+.wrapper {
+  display: grid;
+  justify-content: stretch;
+  grid-template-columns: 1fr 360px;
+  grid-template-rows: 4em 1fr;
+  grid-template-areas:
+    "header chat"
+    "main chat";
+  overflow: hidden;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+}
+
+.header {
+  grid-area: header;
+  overflow: hidden;
+}
+
+.gamePanel {
+  grid-area: main;
+  overflow: hidden;
+}
+
+.chatPanel {
+  grid-area: chat;
+  overflow: hidden;
+  font-size: 14px;
+}
+
+@media only screen and (max-width: 600px) {
+  .wrapper {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+    "header"
+    "main";
+  }
+  .chatPanel {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 1000px) {
+  .wrapper {
+    grid-template-columns: 3fr 1fr;
+  }
+  .chatPanel {
+    font-size: 1.2vw;
+  }
+}
+
+@media only screen and (min-width: 1001px) and (max-width: 1360px) {
+  .wrapper {
+    grid-template-columns: 1fr 25vw;
+  }
+  .chatPanel {
+    font-size: 14px;
+  }
+}

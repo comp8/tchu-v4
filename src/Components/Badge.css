@@ -1,0 +1,15 @@
+.badgeArray {
+  --size: 1.29em;
+}
+
+.wrapper {
+  display: inline-block;
+  width: var(--size);
+  height: var(--size);
+  overflow: hidden;
+  margin: -0.2em 0.1em;
+}
+
+img.badge {
+  width: 100%;
+}

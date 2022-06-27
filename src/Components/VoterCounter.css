@@ -1,0 +1,25 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--global-color-back-1);
+  font-size: 1.4em;
+  padding: 0.5em;
+}
+
+.current {
+  color: var(--global-color-gray-dark);
+}
+.current::after {
+  content: '/';
+  margin: 0 0.3em;
+}
+
+.total {
+  color: var(--global-color-gray-dark);
+}
+
+.excludes {
+  color: var(--global-color-gray-dark);
+  font-size: 0.7em;
+}

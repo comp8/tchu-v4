@@ -1,0 +1,31 @@
+.wrapper {
+  background-color: var(--global-color-back-1);
+  padding: 0.5em 0.7em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.searchBar {
+  background-color: var(--global-color-back-1);
+  outline: none;
+  border: none;
+  flex: 1;
+  color: var(--global-color-black);
+}
+.searchBar::placeholder {
+  color: var(--global-color-gray-light);
+}
+
+.label {
+  color: var(--global-color-gray-light);
+  padding: 0 0.7em;
+  text-align: center;
+}
+
+.btnX {
+  color: var(--global-color-red);
+  background-color: var(--global-color-back-1);
+  cursor: pointer;
+  padding: 0.5em 1em;
+}

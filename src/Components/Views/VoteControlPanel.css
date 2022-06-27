@@ -1,0 +1,26 @@
+.wrapper {
+  padding: 0 1em;
+}
+
+.toolbar {
+  /* padding: 0.5em; */
+  display: flex;
+  justify-content: stretch;
+  align-items: center;
+}
+
+.toolbar>*:first-child {
+  flex: 4;
+}
+
+.toolbar>* {
+  flex: 3;
+}
+
+.btn {
+  padding: 1em;
+}
+
+.btnStart {}
+
+.btnStop {}
