@@ -30,7 +30,7 @@ export default function ChatWindow(props: ChatWindowProps) {
   const { ref: ulRef } = useAutoScroller<HTMLUListElement>();
 
   return (
-    <div className={`${props.className} ${style.wrapper}`}>
+    <div className={`${props.className || ''} ${style.wrapper}`}>
       <div className={style.header}>
         <span className={style.channel}>
           {channel ? `#${channel}` : 'Chat'}

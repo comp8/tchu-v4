@@ -11,3 +11,5 @@ export default store;
 
 export * from './actions';
 export * from './types';
+
+export const reducers = reducer;

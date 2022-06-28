@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`  1`] = `
+<div
+  className="cls-name-wrapper"
+>
+  <span
+    className="cls-name-label"
+  >
+    no.1
+  </span>
+  <input
+    className="undefined undefined cls-name cls-name--edit"
+    onChange={[Function]}
+    type="text"
+    value="test string"
+  />
+</div>
+`;
+
+exports[`  2`] = `
+<div
+  className="cls-name-wrapper"
+>
+  <span
+    className="cls-name-label"
+  >
+    no.1
+  </span>
+  <div
+    className="undefined undefined cls-name cls-name--view"
+  >
+    test string
+  </div>
+</div>
+`;

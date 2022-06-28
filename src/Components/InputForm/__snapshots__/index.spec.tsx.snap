@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`  1`] = `
+<div>
+  <button
+    onClick={[Function]}
+  >
+    +
+  </button>
+  <ul />
+</div>
+`;
+
+exports[`  2`] = `
+<div>
+  <button
+    onClick={[Function]}
+  >
+    +
+  </button>
+  <ul>
+    <div
+      className="input-text-wrapper"
+    >
+      <span
+        className="input-text-label"
+      >
+        1
+      </span>
+      <input
+        className="undefined undefined input-text input-text--edit"
+        onChange={[Function]}
+        type="text"
+        value="asdf"
+      />
+    </div>
+    <div
+      className="input-text-wrapper"
+    >
+      <span
+        className="input-text-label"
+      >
+        2
+      </span>
+      <input
+        className="undefined undefined input-text input-text--edit"
+        onChange={[Function]}
+        type="text"
+        value="qwer"
+      />
+    </div>
+  </ul>
+</div>
+`;
