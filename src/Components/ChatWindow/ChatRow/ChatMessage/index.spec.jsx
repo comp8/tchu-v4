@@ -18,6 +18,7 @@ describe('ChatMessage', () => {
     shallow.render(<ChatMessage emotes={{ testID: ['0-3', '5-8'] }} message='test test' />);
     let result = shallow.getRenderOutput();
     expect(result).toMatchSnapshot();
+    expect(result.props.children.length).toBe(3);
   });
 
   test('', () => {
@@ -26,6 +27,7 @@ describe('ChatMessage', () => {
     shallow.render(<ChatMessage emotes={{ testID: ['5-8', '24-27'], otherID: ['10-14', '29-33'] }} message='msg1 test other message test other msg' />);
     let result = shallow.getRenderOutput();
     expect(result).toMatchSnapshot();
+    expect(result.props.children.length).toBe(9);
   });
 
   test('unsorted emotes', () => {
@@ -34,6 +36,7 @@ describe('ChatMessage', () => {
     shallow.render(<ChatMessage emotes={{ testID: ['24-27', '5-8'], otherID: ['10-14', '29-33'] }} message='msg1 test other message test other msg' />);
     let result = shallow.getRenderOutput();
     expect(result).toMatchSnapshot();
+    expect(result.props.children.length).toBe(9);
   });
 
 });

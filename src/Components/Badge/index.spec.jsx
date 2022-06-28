@@ -1,10 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import ShallowRenderer from 'react-test-renderer/shallow';
 import { Badge } from '.';
 import BadgeContext from '../../contexts/Badge';
-
-import { BadgeSets } from '../../TwitchApi';
 
 const badgesets = {
   subscriber: {
