@@ -17,16 +17,17 @@ function useTheme() {
 
 interface Props {
   className?: string;
-  fontSize?: number;
-  children: React.ReactElement;
+  rootFontSize?: number;
+  children?: React.ReactElement;
 }
 export default function ThemeWrapper(props: Props) {
 
+  // TODO:
   const [theme, setTheme] = useTheme();
 
-  document.documentElement.style.setProperty('font-size', `${props.fontSize || Config.style.defaultRootFontSize}px`);
+  document.documentElement.style.setProperty('font-size', `${props.rootFontSize || Config.style.defaultRootFontSize}px`);
 
   return (
-    <div className={props.className}>{props.children}</div>
+    <div className={props.className}>{props.children || null}</div>
   );
 }
