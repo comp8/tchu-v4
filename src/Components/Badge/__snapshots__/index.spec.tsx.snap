@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Badge invalid 1 1`] = `null`;
+
+exports[`Badge subs 1 1`] = `
+<span>
+  <img
+    src="subscriber_1_1.jpg"
+  />
+</span>
+`;
+
+exports[`Badge subs 2 1`] = `
+<span>
+  <img
+    src="subscriber_2_1.jpg"
+  />
+</span>
+`;
+
+exports[`Badge subs invalid-version 1`] = `null`;
