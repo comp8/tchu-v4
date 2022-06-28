@@ -1,4 +1,4 @@
-import { voteIsOpen, voteTest, VoteRules } from '../Components/Game/VoteUtils';
+import { voteIsOpen, voteTest, VoteRules } from '../common/VoteUtils';
 
 describe('voteUtils', () => {
   
