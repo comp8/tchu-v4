@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import Actions from '../Store/actions';
+import Actions from '../store/actions';
 import { BadgeSets, fetchBadgeSets } from './badges';
 import { fetchUsers } from './users';
 import { validateTwitchAccessToken } from './validate';

@@ -2,7 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import tmi from 'tmi.js';
 import Config from '../config';
-import Actions from '../Store/actions';
+import Actions from '../store/actions';
+
+const connection_delay = 600;
 
 interface ChatClientProps {
   channels: string[];
@@ -65,7 +67,7 @@ export function useChatClient(opts: { channel: string, name?: string, pass?: str
     });
 
     const delayedConnect = (delay: number) => setTimeout(() => cc.connect(), delay);
-    const timerId = delayedConnect(600);
+    const timerId = delayedConnect(connection_delay);
 
     setClient(cc);
 

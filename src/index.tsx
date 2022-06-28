@@ -2,13 +2,13 @@ import React from "react";
 import { createRoot } from 'react-dom/client';
 import { Provider } from "react-redux";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import ThemeWrapper from "./Components/ThemeWrapper";
-import App from "./Pages/App";
-import Auth from "./Pages/Auth";
-import ErrorPage from "./Pages/ErrorPage";
-import Home from "./Pages/Home";
-import NotFound from "./Pages/NotFound";
-import store from "./Store";
+import ThemeWrapper from "./components/ThemeWrapper";
+import App from "./pages/App";
+import Auth from "./pages/Auth";
+import ErrorPage from "./pages/ErrorPage";
+import Home from "./pages/Home";
+import NotFound from "./pages/NotFound";
+import store from "./store";
 
 import style from './index.css';
 

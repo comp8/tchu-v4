@@ -1,0 +1,12 @@
+.wrapper {
+  font-size: 1.29em;
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  overflow: hidden;
+  margin: -0.2em 0.1em;
+}
+
+img.badge {
+  width: 100%;
+}
