@@ -9,6 +9,8 @@ export function WaitFor(sec: number) {
 }
 
 function SimpleHash(str: string, N: number): number {
+  if (!str) return 0;
+  
   str = str.toString();
   let hash = 0;
   for (let i = 0; i < str.length; ++i) {

@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`  1`] = `
+<li
+  data-channel="test_channel_123"
+>
+  <UserName
+    className="chat-name-wrapper"
+    color="#0000ff"
+    delimiter={true}
+  />
+  <ChatMessage
+    message="hello world"
+  />
+</li>
+`;
+
+exports[`  2`] = `
+<li
+  data-channel="test_channel_456"
+>
+  <UserName
+    className="chat-name-wrapper"
+    color="#112233"
+    delimiter={true}
+  />
+  <ChatMessage
+    message="hello, world!"
+  />
+</li>
+`;
+
+exports[`  3`] = `
+<li
+  data-channel="test_channel_777"
+>
+  <UserName
+    className="chat-name-wrapper"
+    color="#00797b"
+    delimiter={true}
+  />
+  <ChatMessage
+    message="qwerty"
+  />
+</li>
+`;
+
+exports[`  4`] = `
+<li
+  data-channel="test_channel_456"
+>
+  <UserName
+    className="chat-name-wrapper"
+    color="#112233"
+    delimiter={true}
+  />
+  <ChatMessage
+    message="hello, world!"
+  />
+</li>
+`;
