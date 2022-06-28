@@ -13,6 +13,6 @@ module.exports = merge(common, {
   performance: {
     maxAssetSize: 350000,
     maxEntrypointSize: 350000,
-    hints: 'error',
+    hints: 'warning',
   }
 });

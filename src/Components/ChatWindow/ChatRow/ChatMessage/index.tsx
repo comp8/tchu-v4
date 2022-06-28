@@ -37,19 +37,19 @@ export default function ChatMessage(props: ChatMessageProps) {
         const end = emote[2];
 
         if (i < begin) {
-          elements.push(<Text str={message.slice(i, begin)} />);
+          elements.push(<Text key={'key-' + elements.length} str={message.slice(i, begin)} />);
         }
-        elements.push(<Emoticon id={emoteId} />);
+        elements.push(<Emoticon key={'key-' + elements.length} id={emoteId} />);
         i = end + 1;
       }
       if (i < message.length) {
-        elements.push(<Text str={message.slice(i)} />);
+        elements.push(<Text key={'key-' + elements.length} str={message.slice(i)} />);
       }
     }
   }
 
   if (elements.length <= 0) {
-    elements.push(<Text str={message} />);
+    elements.push(<Text key={'key-' + elements.length} str={message} />);
   }
 
   return (

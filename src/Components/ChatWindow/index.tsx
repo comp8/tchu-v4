@@ -1,5 +1,5 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
-import ChatRow from "../ChatRow";
+import ChatRow from "./ChatRow";
 import { useSelector } from "react-redux";
 import { IChatsState, RootState } from "../../store";
 

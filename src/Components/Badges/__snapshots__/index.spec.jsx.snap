@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Badges  1`] = `
+<span
+  className="badges-wrapper"
+/>
+`;
+
+exports[`Badges  2`] = `
+<span
+  className="badges-wrapper"
+>
+  <Badge
+    badgeId="subscriber"
+    version="6"
+  />
+  <Badge
+    badgeId="testBadge"
+    version="1"
+  />
+  <Badge
+    badgeId="otherBadge"
+    version="2"
+  />
+</span>
+`;

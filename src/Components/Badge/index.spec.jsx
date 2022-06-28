@@ -6,7 +6,7 @@ import BadgeContext from '../../contexts/Badge';
 
 import { BadgeSets } from '../../TwitchApi';
 
-const badgesets: BadgeSets = {
+const badgesets = {
   subscriber: {
     versions: {
       '1': {
