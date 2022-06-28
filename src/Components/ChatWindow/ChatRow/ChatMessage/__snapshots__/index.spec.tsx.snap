@@ -1,0 +1,95 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ChatMessage  1`] = `
+<span
+  className="chat-message"
+>
+  <Emoticon
+    id="invalidRangeTest"
+  />
+</span>
+`;
+
+exports[`ChatMessage  2`] = `
+<span
+  className="chat-message"
+>
+  <Emoticon
+    id="testID"
+  />
+  <Text
+    str=" "
+  />
+  <Emoticon
+    id="testID"
+  />
+</span>
+`;
+
+exports[`ChatMessage  3`] = `
+<span
+  className="chat-message"
+>
+  <Text
+    str="msg1 "
+  />
+  <Emoticon
+    id="testID"
+  />
+  <Text
+    str=" "
+  />
+  <Emoticon
+    id="otherID"
+  />
+  <Text
+    str=" message "
+  />
+  <Emoticon
+    id="testID"
+  />
+  <Text
+    str=" "
+  />
+  <Emoticon
+    id="otherID"
+  />
+  <Text
+    str=" msg"
+  />
+</span>
+`;
+
+exports[`ChatMessage unsorted emotes 1`] = `
+<span
+  className="chat-message"
+>
+  <Text
+    str="msg1 "
+  />
+  <Emoticon
+    id="testID"
+  />
+  <Text
+    str=" "
+  />
+  <Emoticon
+    id="otherID"
+  />
+  <Text
+    str=" message "
+  />
+  <Emoticon
+    id="testID"
+  />
+  <Text
+    str=" "
+  />
+  <Emoticon
+    id="otherID"
+  />
+  <Text
+    str=" msg"
+  />
+</span>
+`;

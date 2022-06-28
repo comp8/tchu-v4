@@ -55,7 +55,7 @@ export default function ChatMessage(props: ChatMessageProps) {
   return (
     <span className='chat-message'>
       {
-        ...elements
+        elements ? elements : null
       }
     </span>
   );

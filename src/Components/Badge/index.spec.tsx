@@ -66,6 +66,7 @@ describe('Badge', () => {
         <Badge badgeId='subscriber' version='1' />
       </BadgeContext.Provider>
     );
+    expect(comp.toJSON()).not.toBeNull();
     expect(comp.toJSON()).toMatchSnapshot();
   });
   test('subs 2', () => {
@@ -74,6 +75,7 @@ describe('Badge', () => {
         <Badge badgeId='subscriber' version='2' />
       </BadgeContext.Provider>
     );
+    expect(comp.toJSON()).not.toBeNull();
     expect(comp.toJSON()).toMatchSnapshot();
   });
   test('subs invalid-version', () => {
@@ -82,6 +84,7 @@ describe('Badge', () => {
         <Badge badgeId='subscriber' version='invalid' />
       </BadgeContext.Provider>
     );
+    expect(comp.toJSON()).toBeNull();
     expect(comp.toJSON()).toMatchSnapshot();
   });
   test('invalid 1', () => {
@@ -90,6 +93,7 @@ describe('Badge', () => {
         <Badge badgeId='invalid' version='1' />
       </BadgeContext.Provider>
     );
+    expect(comp.toJSON()).toBeNull();
     expect(comp.toJSON()).toMatchSnapshot();
   });
 })

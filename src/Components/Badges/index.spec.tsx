@@ -26,8 +26,9 @@ describe('Badges', () => {
 
   test('', () => {
     const renderer = ShallowRenderer.createRenderer();
-    renderer.render(<Badges badges={{ subscriber: '6', testBadge: '1' }} />);
+    renderer.render(<Badges badges={{ subscriber: '6', testBadge: '1', otherBadge: '2' }} />);
     const result = renderer.getRenderOutput();
     expect(result).toMatchSnapshot();
+    expect(result.props.children.length).toBe(3);
   });
 })

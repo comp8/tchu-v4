@@ -18,5 +18,9 @@ exports[`Badges  2`] = `
     badgeId="testBadge"
     version="1"
   />
+  <Badge
+    badgeId="otherBadge"
+    version="2"
+  />
 </span>
 `;
