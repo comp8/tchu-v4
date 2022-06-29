@@ -19,6 +19,7 @@
 
 .btn {
   padding: 1em;
+  color: var(--global-color-white);
 }
 
 .btnStart {}

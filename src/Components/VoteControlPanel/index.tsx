@@ -75,8 +75,8 @@ export default function VoteControlPanel(props: VoteControlPanelProps) {
       <div className={style.toolbar}>
         <StyledButton
           theme={{
-            backColor: Config.style.defaultTheme["color-theme-2"],
-            borderColor: Config.style.defaultTheme["color-theme-1"],
+            backColor: 'var(--global-color-theme-2)',
+            borderColor: 'var(--global-color-theme-1)',
           }}
           onClick={handleStart}
         >
@@ -84,8 +84,8 @@ export default function VoteControlPanel(props: VoteControlPanelProps) {
         </StyledButton>
         <StyledButton
           theme={{
-            backColor: Config.style.defaultTheme["color-theme-2"],
-            borderColor: Config.style.defaultTheme["color-theme-1"],
+            backColor: 'var(--global-color-theme-2)',
+            borderColor: 'var(--global-color-theme-1)',
           }}
           onClick={handleStop}
         >
