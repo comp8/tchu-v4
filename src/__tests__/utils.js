@@ -1,4 +1,4 @@
-import { Base62, compareUint8Array_unsafe, levenshtein, testKeyword } from '../common/utils';
+import { Base62, compareUint8Array_unsafe, lerp, levenshtein, testKeyword } from '../common/utils';
 
 describe('base-x', () => {
   test('sample', () => {
@@ -114,5 +114,38 @@ describe('testKeyword', () => {
   test('', () => {
     const d = testKeyword('애국가', ['동해물과백두산이', 'ghjktyu']);
     expect(d).toBeGreaterThanOrEqual(3);
+  });
+});
+
+describe('lerp & lerpUnclamped', () => {
+  test('lerp', () => {
+    expect(lerp(2, 9, 0)).toBeCloseTo(2);
+  });
+  test('lerp', () => {
+    expect(lerp(2, 9, 1)).toBeCloseTo(9);
+  });
+  test('lerp', () => {
+    expect(lerp(2, 9, 0.5)).toBeCloseTo(5.5);
+  });
+  test('lerp', () => {
+    expect(lerp(2, 9, -0.5)).toBeCloseTo(2);
+  });
+  test('lerp', () => {
+    expect(lerp(2, 9, 1.5)).toBeCloseTo(9);
+  });
+  test('lerp', () => {
+    expect(lerp(2, 9, Infinity)).toBeCloseTo(9);
+  });
+  test('lerp', () => {
+    expect(lerp(2, 9, -Infinity)).toBeCloseTo(2);
+  });
+  test('lerp', () => {
+    expect(lerp(-5, 5, 0)).toBeCloseTo(-5);
+  });
+  test('lerp', () => {
+    expect(lerp(-5, 5, 0.5)).toBeCloseTo(0);
+  });
+  test('lerp', () => {
+    expect(lerp(-5, 5, 1)).toBeCloseTo(5);
   });
 });

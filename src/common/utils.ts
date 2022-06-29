@@ -10,7 +10,7 @@ export function WaitFor(sec: number) {
 
 function SimpleHash(str: string, N: number): number {
   if (!str) return 0;
-  
+
   str = str.toString();
   let hash = 0;
   for (let i = 0; i < str.length; ++i) {
@@ -149,4 +149,14 @@ export function levenshtein(str1: string, str2: string): number {
   }
 
   return data[data.length - 1];
+}
+
+export function lerp(min: number, max: number, t: number) {
+  t = t < 0 ? 0 : t > 1 ? 1 : t;
+  return (max - min) * t + min;
+}
+
+export function lerpUnclamped(min: number, max: number, t: number) {
+  t = t < 0 ? 0 : t > 1 ? 1 : t;
+  return (max - min) * t + min;
 }
