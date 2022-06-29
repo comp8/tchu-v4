@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { IUserData, IVoteItem, IVoteSession, RootState } from "../../store";
 import UserName from "../UserName";
 import SearchBar from "../SearchBar";
-import StyledButton from "../StyledButton";
+import StyledButton from "../StyledButton_new";
 
 import style from './style.css';
 import { testKeyword } from "../../common/utils";
@@ -78,11 +78,12 @@ export default function VoterList(props: VoterListProps) {
       </div>
       <div className={style.footer}>
         <StyledButton
-          foreColor={'white'}
-          backColor={Config.style.defaultTheme["color-theme"]}
-          borderColor={Config.style.defaultTheme["color-theme"]}
-          style={{ width: '100%' }}
-          hoverEffect='pulse'
+          theme={{
+            backColor: Config.style.defaultTheme["color-theme-1"],
+            borderColor: Config.style.defaultTheme["color-theme-1"],
+          }}
+          effectOff
+          style={{ color: 'white', flex: '1' }}
         >
           <div className={style.rollBtn}>{t('Roll Button')}</div>
         </StyledButton>

@@ -1,0 +1,298 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[` change theme 1`] = `
+<button
+  className=""
+  onClick={[Function]}
+  onMouseDown={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+  onMouseUp={[Function]}
+  role="button"
+  style={
+    Object {
+      "--border-radius": "auto",
+      "--border-width": "9px",
+      "--color-back": "red",
+      "--color-border": "yellow",
+      "--color-shadow": "green",
+      "--shadow-height": "0.3em",
+    }
+  }
+  title="link to"
+>
+  <span>
+    <span>
+      link to
+    </span>
+  </span>
+</button>
+`;
+
+exports[` change theme 2`] = `
+<button
+  className=""
+  onClick={[Function]}
+  onMouseDown={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+  onMouseUp={[Function]}
+  role="button"
+  style={
+    Object {
+      "--border-radius": "auto",
+      "--border-width": "9px",
+      "--color-back": "red",
+      "--color-border": "yellow",
+      "--color-shadow": "black",
+      "--shadow-height": "0",
+    }
+  }
+  title="link to"
+>
+  <span>
+    <span>
+      link to
+    </span>
+  </span>
+</button>
+`;
+
+exports[` change theme 3`] = `
+<button
+  className=""
+  onClick={[Function]}
+  onMouseDown={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+  onMouseUp={[Function]}
+  role="button"
+  style={
+    Object {
+      "--border-radius": "auto",
+      "--border-width": "3em",
+      "--color-back": "blue",
+      "--color-border": "white",
+      "--color-shadow": "black",
+      "--shadow-height": "0",
+    }
+  }
+  title="link to"
+>
+  <span>
+    <span>
+      link to
+    </span>
+  </span>
+</button>
+`;
+
+exports[` change theme 4`] = `
+<button
+  className=""
+  onClick={[Function]}
+  onMouseDown={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+  onMouseUp={[Function]}
+  role="button"
+  style={
+    Object {
+      "--border-radius": "auto",
+      "--border-width": "0.2em",
+      "--color-back": "green",
+      "--color-border": "black",
+      "--color-shadow": "black",
+      "--shadow-height": "0",
+    }
+  }
+  title="link to"
+>
+  <span>
+    <span>
+      link to
+    </span>
+  </span>
+</button>
+`;
+
+exports[` change theme 5`] = `
+<button
+  className=""
+  onClick={[Function]}
+  onMouseDown={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+  onMouseUp={[Function]}
+  role="button"
+  style={
+    Object {
+      "--border-radius": "50%",
+      "--border-width": "0.2em",
+      "--color-back": "green",
+      "--color-border": "black",
+      "--color-shadow": "black",
+      "--shadow-height": "0",
+    }
+  }
+  title="link to"
+>
+  <span>
+    <span>
+      link to
+    </span>
+  </span>
+</button>
+`;
+
+exports[` change theme 6`] = `
+<button
+  className=""
+  onClick={[Function]}
+  onMouseDown={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+  onMouseUp={[Function]}
+  role="button"
+  style={
+    Object {
+      "--border-radius": "5px",
+      "--border-width": "0.2em",
+      "--color-back": "green",
+      "--color-border": "black",
+      "--color-shadow": "black",
+      "--shadow-height": "0",
+    }
+  }
+  title="link to"
+>
+  <span>
+    <span>
+      link to
+    </span>
+  </span>
+</button>
+`;
+
+exports[` element button 1`] = `
+<button
+  className=""
+  onClick={[Function]}
+  onMouseDown={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+  onMouseUp={[Function]}
+  role="button"
+  style={
+    Object {
+      "--border-radius": "auto",
+      "--border-width": "0.2em",
+      "--color-back": "#ffeb3b",
+      "--color-border": "#9c27b0",
+      "--color-shadow": "black",
+      "--shadow-height": "0.3em",
+    }
+  }
+  title={null}
+>
+  <span>
+    <span>
+      <div>
+        <span>
+          <i />
+          <span>
+            text
+          </span>
+        </span>
+      </div>
+    </span>
+  </span>
+</button>
+`;
+
+exports[` link button 1`] = `
+<button
+  className=""
+  onClick={[Function]}
+  onMouseDown={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+  onMouseUp={[Function]}
+  role="button"
+  style={
+    Object {
+      "--border-radius": "auto",
+      "--border-width": "0.2em",
+      "--color-back": "#ffeb3b",
+      "--color-border": "#9c27b0",
+      "--color-shadow": "black",
+      "--shadow-height": "0.3em",
+    }
+  }
+  title="link to"
+>
+  <span>
+    <span>
+      link to
+    </span>
+  </span>
+</button>
+`;
+
+exports[` link button 2`] = `
+<button
+  className=""
+  onClick={[Function]}
+  onMouseDown={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+  onMouseUp={[Function]}
+  role="button"
+  style={
+    Object {
+      "--border-radius": "auto",
+      "--border-width": "0.2em",
+      "--color-back": "#ffeb3b",
+      "--color-border": "#9c27b0",
+      "--color-shadow": "black",
+      "--shadow-height": "0.3em",
+    }
+  }
+  title="link to"
+>
+  <span>
+    <span>
+      link to
+    </span>
+  </span>
+</button>
+`;
+
+exports[` string button 1`] = `
+<button
+  className=""
+  onClick={[Function]}
+  onMouseDown={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+  onMouseUp={[Function]}
+  role="button"
+  style={
+    Object {
+      "--border-radius": "auto",
+      "--border-width": "0.2em",
+      "--color-back": "#ffeb3b",
+      "--color-border": "#9c27b0",
+      "--color-shadow": "black",
+      "--shadow-height": "0.3em",
+    }
+  }
+  title="btn"
+>
+  <span>
+    <span>
+      btn
+    </span>
+  </span>
+</button>
+`;

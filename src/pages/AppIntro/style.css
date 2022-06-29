@@ -16,26 +16,31 @@
 }
 
 .buttons>*:first-child {
-  padding: 2em 1em;
-  border-color: var(--global-color-theme);
-  background-color: var(--global-color-theme);
-  color: var(--global-color-white);
-  text-decoration: none;
 }
-.buttons>*:first-child:hover {
+.buttons>*:last-child:hover span {
   text-decoration: underline;
 }
 
 .buttons>* {
   flex: 1;
+  margin-top: 1em;
+}
+
+.btn {
   padding: 1em;
   border-radius: 1px;
-  border-style: solid;
+  /* border-style: solid; */
   width: 20em;
   text-align: center;
   margin: 0.5em;
 }
 
-.btnMine {}
+.btnMine {
+  padding: 2em 1em;
+  color: var(--global-color-white);
+  text-decoration: none;
+}
 
-.btnOther {}
+.btnOther {
+
+}

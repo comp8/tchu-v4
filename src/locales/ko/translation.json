@@ -22,5 +22,7 @@
   "Stop Vote": "모집 종료",
   "AppIntro: Input channel name": "채널명을 입력해주세요 (ID)",
   "Go to my channel": "내 채널 ({{channelName}})",
-  "Go to other channel": "다른 채널 가기"
+  "Go to other channel": "다른 채널 가기",
+  "Show Chat": "채팅창 열기",
+  "Hide Chat": "채팅창 감추기"
 }

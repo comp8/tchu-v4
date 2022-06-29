@@ -5,6 +5,7 @@ interface CssExports {
   'channelInfo': string;
   'displayName': string;
   'logoutBtn': string;
+  'logoutBtnText': string;
   'profile': string;
   'profileWrapper': string;
   'userName': string;

@@ -6,7 +6,7 @@ import NewGame from "../NewGame";
 import VoteControlPanel from "../VoteControlPanel";
 
 import style from './style.css';
-import StyledButton from "../StyledButton";
+import StyledButton from "../StyledButton_new";
 import Config from "../../config";
 import { useDispatch } from "react-redux";
 import Actions from "../../store/actions";
@@ -31,7 +31,7 @@ export default function Game(props: GameProps) {
     dispatch(Actions.Votes.Clear());
   }, []);
 
-  const {t} = useTranslation();
+  const { t } = useTranslation();
 
   return (
     <div className={`${props.className} ${style.wrapper}`}>
@@ -39,11 +39,11 @@ export default function Game(props: GameProps) {
       <div className={style.rightPanel}>
         <nav className={style.navBar}>
           <StyledButton
-          backColor={Config.style.defaultTheme["color-back-1"]}
-          foreColor={Config.style.defaultTheme["color-gray-dark"]}
-          borderColor='transparent'
-          hoverEffect='normal'
-          onClick={handleClick_Home}
+            theme={{
+              backColor: Config.style.defaultTheme["color-back-1"],
+              borderColor: 'transparent',
+            }}
+            onClick={handleClick_Home}
           >
             <span className={style.btnHome}>
               <span className="icon-home"></span>

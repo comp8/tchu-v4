@@ -1,5 +1,5 @@
-import React, { useCallback, useState } from "react";
-import StyledButton from "../StyledButton";
+import React, { useState } from "react";
+import StyledButton from "../StyledButton_new";
 import style from './style.css';
 import Config from "../../config";
 import { useTranslation } from "react-i18next";
@@ -44,9 +44,11 @@ export default function SearchBar(props: SearchBarProps) {
         onKeyDown={handleKeyDown}
       />
       <StyledButton
-        borderColor={'transparent'}
-        foreColor={Config.style.defaultTheme["color-theme"]}
-        backColor={Config.style.defaultTheme["color-back-1"]}
+        theme={{
+          backColor: Config.style.defaultTheme["color-back-1"],
+          borderColor: 'transparent',
+          borderWidth: '0',
+        }}
         onClick={handleClickBtnX}
       >
         {

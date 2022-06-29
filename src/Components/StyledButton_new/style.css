@@ -1,0 +1,91 @@
+.outer {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  transition: all 200ms;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.inner {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 0.2em;
+  min-height: 2em;
+  min-width: 2em;
+  transition: all 100ms;
+}
+
+.outer::before {
+  content: ' ';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+.outer::after {
+  content: ' ';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+.inner::before {
+  content: ' ';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+.outer:not(.hovering):not(.pressing)>.inner {
+  top: -.4em;
+  top: 0;
+}
+
+.outer.hovering:not(.pressing)>.inner {
+  top: -.5em;
+}
+
+.outer.pressing.hovering .inner {
+  top: -.1em;
+}
+
+.outer.pressing:not(.hovering)>.inner {
+  top: -.3em;
+}
+
+.wrapper {
+  overflow: hidden;
+}
+
+.inner {
+  border: var(--border-width) solid var(--color-border);
+}
+.inner {
+  background-color: var(--color-back);
+  border-radius: var(--border-radius);
+}
+.outer::before {
+  background-color: var(--color-shadow);
+  bottom: calc(0 - var(--shadow-height));
+}
+.outer::after {
+  background-color: var(--color-border);
+  border-radius: var(--border-radius);
+}

@@ -8,7 +8,7 @@ import Actions from "../../store/actions";
 import { VoteRules } from "../../common/VoteUtils";
 
 import style from './style.css';
-import StyledButton from "../StyledButton";
+import StyledButton from "../StyledButton_new";
 import Config from "../../config";
 import { useTranslation } from "react-i18next";
 
@@ -51,10 +51,10 @@ export default function NewGame(props: NewGameProps) {
       <ul className={style.gameList}>
         <li>
           <StyledButton
-            borderColor={Config.style.defaultTheme["color-theme"]}
-            backColor={Config.style.defaultTheme["color-back-1"]}
-            foreColor={Config.style.defaultTheme["color-theme"]}
-            hoverEffect="invert"
+            theme={{
+              backColor: 'var(--global-color-theme-1)',
+              borderColor: 'var(--global-color-theme-2)',
+            }}
             onClick={handleClick_SimpleGame}
           >
             <span className={style.btn}><span className="icon-gift"></span><span className={style.btnText}>{t('mode_simpleGame')}</span></span>
@@ -62,10 +62,10 @@ export default function NewGame(props: NewGameProps) {
         </li>
         <li>
           <StyledButton
-            borderColor={Config.style.defaultTheme["color-theme"]}
-            backColor={Config.style.defaultTheme["color-back-1"]}
-            foreColor={Config.style.defaultTheme["color-theme"]}
-            hoverEffect="invert"
+            theme={{
+              backColor: 'var(--global-color-theme-1)',
+              borderColor: 'var(--global-color-theme-2)',
+            }}
             onClick={handleClick_NumberGame}
           >
             <span className={style.btn}><span className="icon-number"></span><span className={style.btnText}>{t('mode_numberGame')}</span></span>

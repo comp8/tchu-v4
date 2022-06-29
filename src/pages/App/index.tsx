@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useLayoutEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useParams, Navigate, } from 'react-router-dom';
 import { useBadgeSets as useBadgeSet, useBroadcasterInfo, useChatClient, useTwitchValidation } from "../../TwitchApi";
@@ -12,7 +12,14 @@ import ChatClientContext from "../../contexts/ChatClient";
 import BadgeContext from "../../contexts/Badge";
 import RemoveTrailingSlash from "../../components/RemoveTrailingSlash";
 import Game from "../../components/Game";
-import ChatWindow from "../../components/ChatWindow";
+import { ChatWindow, ChatWindowHidden } from "../../components/ChatWindow";
+import StyledButton from "../../components/StyledButton_new";
+
+function useChatToggler(): [boolean, React.Dispatch<React.SetStateAction<boolean>>] {
+  const [visibility, setVisibility] = useState<boolean>(true);
+
+  return [visibility, setVisibility];
+}
 
 interface AppProp {
 
@@ -31,6 +38,8 @@ export default function App(props: AppProp) {
   const dispatch = useDispatch();
   const { t } = useTranslation();
 
+  const [isChatVisible, changeChatVisibility] = useChatToggler();
+
   useEffect(() => {
     dispatch(Actions.Chats.Clear());
     dispatch(Actions.Users.Clear());
@@ -40,7 +49,7 @@ export default function App(props: AppProp) {
   return (
     <ChatClientContext.Provider value={chatClient}>
       <BadgeContext.Provider value={badgeSet}>
-        <div className={style.wrapper} >
+        <div className={[style.wrapper, isChatVisible ? style.chatVisible : style.chatInvisible].join(' ')} >
           {
             !access_token ? <Navigate to={'/?sign-in'} /> : null
           }
@@ -49,13 +58,22 @@ export default function App(props: AppProp) {
               <p>{t('waiting for validation')}</p>
             ) : (
               !channel ? (
-                <AppIntro myChannel={login}/>
+                <AppIntro myChannel={login} />
               ) : (
                 <>
                   <RemoveTrailingSlash />
                   <ChannelHeader className={style.header} displayName={broadcasterInfo.dname} userName={broadcasterInfo.uname} profileImage={broadcasterInfo.profile} />
                   <Game className={style.gamePanel} />
-                  <ChatWindow className={style.chatPanel} MaxItems={200} />
+                  {
+                    isChatVisible ?
+                      (
+                        <ChatWindow className={style.chatPanel} MaxItems={200} onChangeVisibility={changeChatVisibility} />
+                      )
+                      :
+                      (
+                        <ChatWindowHidden onChangeVisibility={changeChatVisibility}/>
+                      )
+                  }
                 </>
               )
             )

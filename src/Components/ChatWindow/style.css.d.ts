@@ -7,6 +7,10 @@ interface CssExports {
   'content': string;
   'footer': string;
   'header': string;
+  'hideChatButton': string;
+  'hideChatButtonDesc': string;
+  'showChatButton': string;
+  'showChatButtonWrapper': string;
   'spin': string;
   'spinner': string;
   'spinnerWrapper': string;

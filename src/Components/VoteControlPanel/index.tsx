@@ -9,7 +9,7 @@ import { voteIsOpen, voteIsReady, voteTest } from "../../common/VoteUtils";
 import InputForm from "../InputForm";
 
 import style from './style.css';
-import StyledButton from "../StyledButton";
+import StyledButton from "../StyledButton_new";
 import Config from "../../config";
 import { useTranslation } from "react-i18next";
 
@@ -74,19 +74,19 @@ export default function VoteControlPanel(props: VoteControlPanelProps) {
     <div className={`${style.wrapper} ${props.className || ''}`}>
       <div className={style.toolbar}>
         <StyledButton
-          backColor={Config.style.defaultTheme["color-theme"]}
-          foreColor={Config.style.defaultTheme["color-back-1"]}
-          borderColor={Config.style.defaultTheme["color-theme"]}
-          hoverEffect="pulse"
+          theme={{
+            backColor: Config.style.defaultTheme["color-theme-2"],
+            borderColor: Config.style.defaultTheme["color-theme-1"],
+          }}
           onClick={handleStart}
         >
           <span className={`${style.btn} ${style.btnStart}`}>{t('Start Vote')}</span>
         </StyledButton>
         <StyledButton
-          backColor={Config.style.defaultTheme["color-back-1"]}
-          foreColor={Config.style.defaultTheme["color-theme"]}
-          borderColor={Config.style.defaultTheme["color-theme"]}
-          hoverEffect="normal"
+          theme={{
+            backColor: Config.style.defaultTheme["color-theme-2"],
+            borderColor: Config.style.defaultTheme["color-theme-1"],
+          }}
           onClick={handleStop}
         >
           <span className={`${style.btn} ${style.btnStop}`}>{t('Stop Vote')}</span>

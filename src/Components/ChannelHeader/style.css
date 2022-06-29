@@ -11,8 +11,8 @@ header.wrapper {
   align-items: center;
 }
 
-.channelBtn {
-  overflow: hidden;
+.channelBtn:hover {
+  text-decoration: underline;
 }
 
 .channelInfo {
@@ -25,8 +25,15 @@ header.wrapper {
 }
 
 .logoutBtn {
-  overflow: hidden;
-  padding: 1.5em;
+  color: var(--global-color-gray-light-2);
+  margin: 0 0.5em;
+}
+.logoutBtn:hover {
+  text-decoration: underline;
+  background-color: var(--global-color-gray-light-3);
+  color: var(--global-color-gray-light-1);
+}
+.logoutBtnText {
 }
 
 .profileWrapper {

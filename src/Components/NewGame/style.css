@@ -19,10 +19,12 @@
 
 .btn {
   padding: 0.8em;
-  width: 100%;
+  color: var(--global-color-white);
+  font-size: 1.4em;
+  display: block;
 }
 .btnText {
-  margin-left: 1em;
+  margin: 0 .7em 0 .5em;
 }
 
 .desc {

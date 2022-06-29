@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import Config from "../../config";
 
 import style from './style.css';
 import { useLogout } from "../../hooks/useLogout";
-import StyledButton from "../StyledButton";
+import StyledButton from "../StyledButton_new";
 
 interface Props {
   className?: string;
@@ -18,26 +18,21 @@ export default function ChannelHeader(props: Props) {
   const displayName = props.displayName || '';
   const userName = props.userName || '';
   const profileImage = props.profileImage || Config.Twitch.profile_fallback;
-  const navigate = useNavigate();
+
   const logout = useLogout();
-
-  const handleClickChannel = () => {
-    navigate(`/app`, { replace: true });
-  };
-
-  const handleClickLogout = () => logout();
 
   const { t } = useTranslation();
 
   return (
     <header className={`${props.className} ${style.wrapper}`}>
       <StyledButton
+        theme={{
+          backColor: 'transparent',
+          borderColor: 'transparent'
+        }}
         className={style.channelBtn}
-        foreColor={Config.style.defaultTheme["color-black"]}
-        backColor={Config.style.defaultTheme["color-back-1"]}
-        borderColor={'transparent'}
-        hoverEffect='zoom'
-        onClick={handleClickChannel}
+        effectOff
+        Link={{ to: '/app', replace: true }}
       >
         <div className={style.channelInfo}>
           <span className={style.profileWrapper} >
@@ -52,13 +47,15 @@ export default function ChannelHeader(props: Props) {
         </div>
       </StyledButton>
       <StyledButton
-        backColor="transparent"
-        foreColor={Config.style.defaultTheme["color-gray-light"]}
-        borderColor="transparent"
-        hoverEffect="normal"
-        onClick={handleClickLogout}
+        theme={{
+          backColor: 'transparent',
+          borderColor: 'transparent',
+        }}
+        className={style.logoutBtn}
+        effectOff
+        onClick={logout}
       >
-        <div className={style.logoutBtn}>{t('Logout')}</div>
+        <span className={style.logoutBtnText}>{t('Logout')}</span>
       </StyledButton>
     </header>
   );

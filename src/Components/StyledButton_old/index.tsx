@@ -13,7 +13,7 @@ interface Props {
   hoverEffect?: 'invert' | 'normal' | 'zoom' | 'pulse';
   style?: Record<string, string>;
 }
-export default function StyledButton(props: Props) {
+export default function StyledButton2(props: Props) {
 
   const ref = useRef<HTMLDivElement>();
   const { backColor, foreColor, borderColor } = props;

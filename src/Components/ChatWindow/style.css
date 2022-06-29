@@ -2,7 +2,7 @@
   display: grid;
   justify-content: stretch;
   grid-template-columns: 100%;
-  grid-template-rows: 4em 1fr 4em;
+  grid-template-rows: 6rem 1fr 4em;
   grid-template-areas:
     "header"
     "content"
@@ -21,6 +21,7 @@
   justify-content: stretch;
   display: flex;
   align-items: center;
+  position: relative;
 }
 
 .content {
@@ -91,4 +92,25 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.showChatButtonWrapper {
+  position: fixed;
+  right: 1em;
+  bottom: 1em;
+}
+.showChatButton {
+  font-size: 2vmin;
+  border-radius: 50%;
+  color: var(--global-color-white);
+}
+
+.hideChatButton:hover {
+  background-color: var(--global-color-white);
+}
+.hideChatButton {
+  position: absolute;
+}
+.hideChatButton:hover .hideChatButtonDesc::before {
+  content: attr(data-title);
 }

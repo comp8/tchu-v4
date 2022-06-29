@@ -24,6 +24,7 @@
 .footer {
   grid-area: footer;
   overflow: hidden;
+  display: flex;
 }
 
 .content ul {

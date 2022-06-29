@@ -1,7 +1,7 @@
 import React, { useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import { Link, useNavigate } from "react-router-dom";
-import StyledButton from "../../components/StyledButton";
+import StyledButton from "../../components/StyledButton_new";
 
 import Config from "../../config";
 
@@ -30,15 +30,29 @@ export default function AppIntro(props: Props) {
         <span>{t('appDesc')}</span>
       </div>
       <div className={style.buttons}>
-        <Link className={style.btnMine} to={'/app/' + myChannel}>{t('Go to my channel', { channelName: myChannel })}</Link>
         <StyledButton
-          backColor={Config.style.defaultTheme["color-back-1"]}
-          borderColor={'transparent'}
-          foreColor={Config.style.defaultTheme["color-black"]}
-          hoverEffect="normal"
+          theme={{
+            backColor: 'var(--global-color-theme-1)',
+            borderColor: 'var(--global-color-theme-2)',
+            borderWidth: '0.3em'
+          }}
+          Link={{ to: '/app/' + myChannel, }}
+        >
+          <div className={[style.btn, style.btnMine].join(' ')}>
+            {t('Go to my channel', { channelName: myChannel })}
+          </div>
+        </StyledButton>
+        <StyledButton
+          theme={{
+            backColor: Config.style.defaultTheme["color-back-1"],
+            borderColor: Config.style.defaultTheme["color-back-1"],
+          }}
+          effectOff
           onClick={handleClick_other}
         >
-          <div className={style.btnOther}>{t('Go to other channel')}</div>
+          <div className={[style.btn, style.btnOther].join(' ')}>
+            {t('Go to other channel')}
+          </div>
         </StyledButton>
       </div>
     </div>
