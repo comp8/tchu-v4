@@ -3,13 +3,15 @@ import { useSelector } from "react-redux";
 import { IUserData, IVoteItem, IVoteSession, RootState } from "../../store";
 import UserName from "../UserName";
 import SearchBar from "../SearchBar";
-import StyledButton from "../StyledButton_new";
+import StyledButton from "../StyledButton";
 
 import style from './style.css';
 import { testKeyword } from "../../common/utils";
 import VoterCounter from "../VoterCounter";
 import Config from "../../config";
 import { useTranslation } from "react-i18next";
+
+import { toast } from 'react-toastify';
 
 interface VoterListProps {
   current: IVoteSession;
@@ -84,6 +86,7 @@ export default function VoterList(props: VoterListProps) {
           }}
           effectOff
           style={{ color: 'white', flex: '1' }}
+          onClick={() => toast('test', { autoClose: 3000 })}
         >
           <div className={style.rollBtn}>{t('Roll Button')}</div>
         </StyledButton>

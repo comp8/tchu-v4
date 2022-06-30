@@ -1,11 +1,10 @@
-import React, { useCallback } from "react";
+import React from "react";
 import { useTranslation } from "react-i18next";
-import { useNavigate } from "react-router-dom";
 import Config from "../../config";
 
 import style from './style.css';
 import { useLogout } from "../../hooks/useLogout";
-import StyledButton from "../StyledButton_new";
+import StyledButton from "../StyledButton";
 
 interface Props {
   className?: string;

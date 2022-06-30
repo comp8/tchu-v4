@@ -6,7 +6,7 @@ import NewGame from "../NewGame";
 import VoteControlPanel from "../VoteControlPanel";
 
 import style from './style.css';
-import StyledButton from "../StyledButton_new";
+import StyledButton from "../StyledButton";
 import Config from "../../config";
 import { useDispatch } from "react-redux";
 import Actions from "../../store/actions";

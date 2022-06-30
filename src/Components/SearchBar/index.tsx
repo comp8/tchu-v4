@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import StyledButton from "../StyledButton_new";
+import StyledButton from "../StyledButton";
 import style from './style.css';
 import Config from "../../config";
 import { useTranslation } from "react-i18next";

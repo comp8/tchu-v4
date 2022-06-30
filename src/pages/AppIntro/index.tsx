@@ -1,7 +1,7 @@
 import React, { useCallback } from "react";
 import { useTranslation } from "react-i18next";
-import { Link, useNavigate } from "react-router-dom";
-import StyledButton from "../../components/StyledButton_new";
+import { useNavigate } from "react-router-dom";
+import StyledButton from "../../components/StyledButton";
 
 import Config from "../../config";
 

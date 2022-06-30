@@ -8,8 +8,7 @@ import Actions from "../../store/actions";
 import { VoteRules } from "../../common/VoteUtils";
 
 import style from './style.css';
-import StyledButton from "../StyledButton_new";
-import Config from "../../config";
+import StyledButton from "../StyledButton";
 import { useTranslation } from "react-i18next";
 
 interface NewGameProps {

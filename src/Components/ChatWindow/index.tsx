@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import { IChatsState, RootState } from "../../store";
 
 import style from './style.css';
-import StyledButton from "../StyledButton_new";
+import StyledButton from "../StyledButton";
 import { useTranslation } from "react-i18next";
 import { ChatItem } from "../../common/Types";
 import { lerp } from "../../common/utils";

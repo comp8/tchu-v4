@@ -13,7 +13,9 @@ import BadgeContext from "../../contexts/Badge";
 import RemoveTrailingSlash from "../../components/RemoveTrailingSlash";
 import Game from "../../components/Game";
 import { ChatWindow, ChatWindowHidden } from "../../components/ChatWindow";
-import StyledButton from "../../components/StyledButton_new";
+import StyledButton from "../../components/StyledButton";
+
+import { ToastContainer } from 'react-toastify';
 
 function useChatToggler(): [boolean, React.Dispatch<React.SetStateAction<boolean>>] {
   const [visibility, setVisibility] = useState<boolean>(true);
@@ -71,13 +73,14 @@ export default function App(props: AppProp) {
                       )
                       :
                       (
-                        <ChatWindowHidden onChangeVisibility={changeChatVisibility}/>
+                        <ChatWindowHidden onChangeVisibility={changeChatVisibility} />
                       )
                   }
                 </>
               )
             )
           }
+          <ToastContainer closeOnClick  />
         </div>
       </BadgeContext.Provider>
     </ChatClientContext.Provider>

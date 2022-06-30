@@ -9,8 +9,8 @@ import { voteIsOpen, voteIsReady, voteTest } from "../../common/VoteUtils";
 import InputForm from "../InputForm";
 
 import style from './style.css';
-import StyledButton from "../StyledButton_new";
-import Config from "../../config";
+import StyledButton from "../StyledButton";
+
 import { useTranslation } from "react-i18next";
 
 interface VoteControlPanelProps {
