@@ -73,6 +73,7 @@
   align-items: center;
   font-size: 3em;
 }
+
 /* .spinner {
   color: var(--global-color-gray-light-1);
   animation: spin 1s infinite;
@@ -98,7 +99,10 @@
   position: fixed;
   right: 1em;
   bottom: 1em;
+  font-size: 2vmin;
+  background-color: white;
 }
+
 .showChatButton {
   font-size: 2vmin;
   border-radius: 50%;
@@ -108,9 +112,11 @@
 .hideChatButton:hover {
   background-color: var(--global-color-white);
 }
+
 .hideChatButton {
   position: absolute;
 }
+
 .hideChatButton:hover .hideChatButtonDesc::before {
   content: attr(data-title);
 }
