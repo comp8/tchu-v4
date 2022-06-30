@@ -8,6 +8,7 @@ import StyledButton from "../StyledButton";
 import { useTranslation } from "react-i18next";
 import { ChatItem } from "../../common/Types";
 import { lerp } from "../../common/utils";
+import { useAnimTime01 } from "../../hooks/useAnimTime01";
 
 function useAutoScroller<T extends HTMLElement>() {
   const ref = useRef<T>();
@@ -88,30 +89,23 @@ export function ChatWindowHidden(props: ChatWindowHiddenProps) {
 
   const maxCount = 999;
   const animDuration = 180;
+  const [animFrom, animTo] = [-0.2, -0.5];
 
   const items = useSelector<RootState, ChatItem[]>(state => state.chats?.items);
-  const chatId = (items?.[items.length - 1]?.userstate?.id);
+  const lastChatId = (items?.[items.length - 1]?.userstate?.id);
+  const [chats, setChats] = useState<Record<string, any>>({});
 
   const [count, setCount] = useState<number>(0);
-  const [animTick, setAnimTick] = useState<number>(0);
+
+  const { t: animTime } = useAnimTime01({ duration: animDuration }, [lastChatId]);
 
   useLayoutEffect(() => {
-    // count
-    setCount(n => n + 1);
-
-    // anim
-    const timestamp = Date.now();
-    let handleId = requestAnimationFrame(update);
-    function update() {
-      const dt = Date.now() - timestamp;
-      setAnimTick(Math.min(dt / animDuration, 1));
-
-      handleId = dt <= animDuration ? requestAnimationFrame(update) : null;
+    console.log(lastChatId);
+    if (lastChatId) {
+      setChats(chats => ({ ...chats, [lastChatId]: true }));
     }
-    return () => {
-      cancelAnimationFrame(handleId);
-    }
-  }, [chatId]);
+    setCount(Object.keys(chats).length);
+  }, [lastChatId]);
 
   const { t } = useTranslation();
   const handleClick = useCallback(() => {
@@ -137,16 +131,16 @@ export function ChatWindowHidden(props: ChatWindowHiddenProps) {
         count > 0 ? (
           <div style={{
             position: 'absolute',
-            top: lerp(-0.2, -0.5, animTick) + 'em',
+            top: lerp(animFrom, animTo, animTime) + 'em',
             right: '.5em',
             pointerEvents: 'none',
-            transform: 'translate(50%, 0)'
+            transform: 'translate(50%, 0)',
           }}>
             <span style={{
               padding: '0.5em',
               backgroundColor: 'var(--global-color-red)',
               color: 'var(--global-color-white)',
-              fontSize: '0.5em',
+              fontSize: '1vmin',
               borderRadius: '.5em',
               fontFamily: 'monospace',
             }}>{count <= maxCount ? count : (maxCount + '+')}</span>
