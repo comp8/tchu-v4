@@ -12,11 +12,15 @@ import Config from "../../config";
 import { useTranslation } from "react-i18next";
 
 import { toast } from 'react-toastify';
+import { IWinnerInfo } from "../WinnerDialog";
+
+import { v4 as uuidv4 } from 'uuid';
 
 interface VoterListProps {
   current: IVoteSession;
   selectedVoteItem: IVoteItem;
   className?: string;
+  onSetWinner: (winner: IWinnerInfo) => void;
 }
 
 console.warn('TODO: paging');
@@ -53,6 +57,22 @@ export default function VoterList(props: VoterListProps) {
     console.timeEnd('keyword');
   }
 
+  const handleRoll = () => {
+    // toast('test', { autoClose: 3000 });
+    if (selectedVoters.length > 0) {
+      const shuffled = selectedVoters.sort(() => Math.random() - 0.5);
+      const winner = shuffled[0];
+      const badge = winner.founder ? { id: 'founder', version: winner.founder } : winner.subs ? { id: 'subscriber', version: winner.subs } : null;
+      props.onSetWinner({
+        _uuid: uuidv4(),
+        badge: badge,
+        displayName: winner.dname,
+        userName: winner.uname,
+        userId: winner.id,
+      });
+    }
+  };
+
   const handleKeywordChange = useCallback((val: string) => {
     setKeyword(val.replace(/ /g, ''));
   }, []);
@@ -86,7 +106,7 @@ export default function VoterList(props: VoterListProps) {
           }}
           effectOff
           style={{ color: 'white', flex: '1' }}
-          onClick={() => toast('test', { autoClose: 3000 })}
+          onClick={handleRoll}
         >
           <div className={style.rollBtn}>{t('Roll Button')}</div>
         </StyledButton>

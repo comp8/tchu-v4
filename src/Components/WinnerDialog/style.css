@@ -1,0 +1,26 @@
+.dialog {
+  animation: slide-in 350ms ease 0s 1 forwards,
+    fade-in 300ms ease 0s 1 forwards;
+  width: 50vw;
+  height: 60vh;
+}
+
+@keyframes slide-in {
+  from {
+    transform: translate(-20%, 20%) scale(0.9);
+  }
+
+  to {
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

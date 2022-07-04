@@ -11,6 +11,7 @@ import Config from "../../config";
 import { useDispatch } from "react-redux";
 import Actions from "../../store/actions";
 import { useTranslation } from "react-i18next";
+import { IWinnerInfo, WinnerDialog } from "../WinnerDialog";
 
 interface GameProps {
   className?: string;
@@ -22,6 +23,8 @@ export default function Game(props: GameProps) {
   const { current } = useSelector<RootState, IVotesState>(state => state.votes);
 
   const [selectedVoteItem, selectVoteItem] = useState<IVoteItem>();
+
+  const [winner, setWinner] = useState<IWinnerInfo>();
 
   const handleSelectVoteItem = useCallback((voteItemId: string) => {
     selectVoteItem(current?.items?.find(item => item.id === voteItemId));
@@ -35,7 +38,7 @@ export default function Game(props: GameProps) {
 
   return (
     <div className={`${props.className} ${style.wrapper}`}>
-      <VoterList className={style.leftPanel} {...{ current, selectedVoteItem }} />
+      <VoterList className={style.leftPanel} {...{ current, selectedVoteItem }} onSetWinner={setWinner} />
       <div className={style.rightPanel}>
         <nav className={style.navBar}>
           <StyledButton
@@ -55,6 +58,9 @@ export default function Game(props: GameProps) {
           current ? <VoteControlPanel onSelectVoteItem={handleSelectVoteItem} /> : <NewGame />
         }
       </div>
+      {
+        winner ? <WinnerDialog key={winner._uuid} winnerInfo={winner} onClosed={() => setWinner(null)} /> : null
+      }
     </div>
   );
 }

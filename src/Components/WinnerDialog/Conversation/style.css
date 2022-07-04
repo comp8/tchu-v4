@@ -1,0 +1,26 @@
+.list {}
+
+.balloonWrapper {
+  margin: 1em 0;
+  display: flex;
+  justify-content: start;
+  align-items: start;
+}
+
+img.profile {
+  width: 3em;
+  object-fit: cover;
+  border-radius: 7px;
+}
+
+.balloon {
+  display: inline-flex;
+  border-radius: 7px;
+  border: 1px solid black;
+  padding: 0.7em 1.4em;
+  margin-left: 1em;
+}
+
+/* 
+.balloon>:global(.chat-message) {
+} */

@@ -1,0 +1,46 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  animation: bgcolor-in 400ms ease-in 0s 1 forwards;
+}
+
+.backdropBlur {
+  backdrop-filter: blur(4px);
+  animation: blur-in 400ms ease-in 0s 1 forwards;
+}
+
+@keyframes blur-in {
+  from {
+    backdrop-filter: blur(0px);
+  }
+}
+
+@keyframes bgcolor-in {
+  from {
+    background-color: rgba(0, 0, 0, 0);
+  }
+}
+
+.dialog {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: fit-content;
+  height: fit-content;
+  background-color: var(--global-color-white);
+  color: var(--global-color-black);
+  margin: auto;
+  padding: 1em;
+  /* border: 1px solid var(--global-color-black); */
+  border: none;
+  border-radius: 7px;
+  box-shadow: var(--box-shadow-elevation-4);
+  transition: box-shadow 300ms;
+}
