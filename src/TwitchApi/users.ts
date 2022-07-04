@@ -53,3 +53,60 @@ export async function fetchUsers({ ids, logins, access_token }: IFetchUsersOptio
   }
   return null;
 }
+
+interface IFetchUsersFollowsOptions {
+  from_id?: string;
+  to_id?: string;
+  first?: number;
+  after?: string;
+  access_token: string;
+}
+interface ITwitchUserFollowsResponse {
+  total: number;
+  pagination?: {
+    cursor?: string;
+    [key: string]: string;
+  };
+  data: ITwitchUserFollows[];
+}
+interface ITwitchUserFollows {
+  followed_at: string;
+  from_id: string;
+  from_login: string;
+  from_name: string;
+  to_id: string;
+  to_login: string;
+  to_name: string;
+}
+
+export async function fetchUsersFollows({ from_id, to_id, after, first, access_token }: IFetchUsersFollowsOptions): Promise<ITwitchUserFollowsResponse> {
+  const url = 'https://api.twitch.tv/helix/users/follows';
+
+  if (!from_id && !to_id) return null;
+
+  const params = new URLSearchParams();
+
+  from_id && params.set('from_id', from_id);
+  to_id && params.set('to_id', to_id);
+  after && params.set('after', after);
+  first && params.set('first', first.toString());
+
+  try {
+    const response = await fetch(url + '?' + params.toString(), {
+      headers: {
+        'Authorization': 'Bearer ' + access_token,
+        'Client-Id': Config.Twitch.clientId
+      },
+      method: 'GET',
+    });
+
+    if (response.status === 200) {
+      return await response.json();
+    }
+    console.error(response);
+  }
+  catch (ex) {
+    console.error(ex);
+  }
+  return null;
+}
