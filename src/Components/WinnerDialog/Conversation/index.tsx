@@ -18,11 +18,15 @@ export default function Conversation(props: Props) {
   useLayoutEffect(() => {
     setHistory(history => [...history, ...chats.filter(e => !history.includes(e))]);
   }, [items]);
+
+  console.warn('TODO');
+  
   return (
     <ul className={style.list}>
       {
         history.map(item => (
           <li key={item.userstate.id} className={style.balloonWrapper}>
+            <span className='TODO: remove me'>timestamp</span>
             <img className={style.profile} src={props.profileImage} />
             <div className={style.balloon}>
               <ChatMessage message={item.message} emotes={item.userstate.emotes} />

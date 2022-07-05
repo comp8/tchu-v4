@@ -1,6 +1,5 @@
-.list {}
 
-.balloonWrapper {
+.list .balloonWrapper {
   margin: 1em 0;
   display: flex;
   justify-content: start;
@@ -15,10 +14,24 @@ img.profile {
 
 .balloon {
   display: inline-flex;
+  position: relative;
+  background-color: yellow;
   border-radius: 7px;
-  border: 1px solid black;
+  border: none;
   padding: 0.7em 1.4em;
   margin-left: 1em;
+  box-shadow: 0.2em 0.07em 4px -0.2em rgba(0, 0, 0, 0.6);
+}
+
+.balloon::before {
+  background-color: yellow;
+  content: '';
+  position: absolute;
+  transform: rotate(-45deg) skew(10deg, 10deg);
+  top: 0.8em;
+  left: -0.4em;
+  width: 1em;
+  height: 1em;
 }
 
 /* 
