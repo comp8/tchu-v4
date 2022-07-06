@@ -4,7 +4,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
-  entry: path.join(__dirname, 'src', 'index.tsx'),
+  entry: path.join(__dirname, 'src', 'index.ts'),
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'index.bundled.js'
