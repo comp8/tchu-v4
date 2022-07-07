@@ -1,5 +1,30 @@
 {
   "Twitch": {
-    "clientId": ""
+    "profileFallback": "https://static-cdn.jtvnw.net/user-default-pictures-uv/75305d54-c7cc-40d1-bb9c-91fbe85943c7-profile_image-300x300.png",
+    "scope": [],
+    "redirectUri": "http://localhost:3000/auth/7dEs3p85vSdXNPUHHnpVl5i1peL20XTFkGPDn2TMROpCjddViBtfCkO1o5JkBxcG9S6HTTkfP56qErklhOlLkGVHnmjLiXC0JcNjI243Z0Cihp3tRTCHnWpRbVf2EmP7dFNlBf01OOqYq3EBlyY3QxA01TjLg2wNodky81zeHUEarAfNQENwXFWNl1AGCuniMwlAe4Km",
+    "clientId": "cw1wrgfqr45y5ny5lxco6o1wj67w3s",
+    "usernameColors": [
+      "#0000ff",
+      "#0068d0",
+      "#00797b",
+      "#007b00",
+      "#008000",
+      "#1d7d4b",
+      "#337375",
+      "#437900",
+      "#696c97",
+      "#6a7500",
+      "#717171",
+      "#8a2be2",
+      "#926700",
+      "#b14e00",
+      "#b22222",
+      "#b64218",
+      "#c93485",
+      "#ce0098",
+      "#da1c00",
+      "#dc0000"
+    ]
   }
 }

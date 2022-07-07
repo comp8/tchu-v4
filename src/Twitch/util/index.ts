@@ -1,5 +1,3 @@
-import tmi from 'tmi.js';
-
-export function parseEmotes() {
-
-}
+export function dummy__asdfasdfasdf() {
+  return 0;
+} 
