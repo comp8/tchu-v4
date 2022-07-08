@@ -1,10 +1,11 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
-import { usePersistedState } from "../../hooks/usePersistedState";
+
 import { getTwitchAuthUrl } from "../../Twitch/api/auth";
 import { validateAccessToken } from "../../Twitch/api/validate-token";
 
 import Config from '../../config';
 import { useNavigate } from "react-router-dom";
+import { useLocalStorageState } from "../../hooks/usePersistentState";
 
 const TokenContext = createContext<string>(null);
 
@@ -13,7 +14,7 @@ interface Props {
 }
 function TwitchTokenProvider(props: Props) {
   const navigate = useNavigate();
-  const [token, setToken] = usePersistedState<string>('token', '');
+  const [token, setToken] = useLocalStorageState<string>('token', '');
 
   const clientId = Config.Twitch.clientId;
 

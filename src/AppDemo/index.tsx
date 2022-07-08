@@ -6,8 +6,11 @@ import Config from '../config';
 import { Sequence } from "../components/Sequence";
 import { Transition } from '../components/Transition';
 import { useWindowEventListener } from "../hooks/useEventListener";
-import { usePersistedState } from "../hooks/usePersistedState";
+
 import { parseEmotes } from "../datamgmts/chat-store";
+import ChatStoreTypes from "../datamgmts/chat-store/types";
+import { getEmoteUrl } from "../Twitch/api/get-emote-url";
+import { useLocalStorageState, useSessionStorageState } from "../hooks/usePersistentState";
 
 export default function AppDemo() {
   console.log('----- App Demo -----');
@@ -19,26 +22,80 @@ export default function AppDemo() {
   return (
     <>
       <h1>Test</h1>
-      <Test />
+      <Counter1 />
+      <Counter2 />
+      <Counter1 />
+      <Counter2 />
+      {/* <Test /> */}
     </>
   );
 };
 
-function Test() {
+function Chat({ chat }: { chat: ChatStoreTypes.ChatMessage }) {
+  return (
+    <li>
+      {
+        chat.map((e, i) => typeof e === 'string' ? (
+          <span key={'item' + i}>{e}</span>
+        ) : (
+          <span key={'item' + i}><img src={getEmoteUrl(e.id)} /></span>
+        ))
+      }
+    </li>
+  )
+}
 
+function Counter1() {
+  const [count, setCount] = useLocalStorageState<number>('count', 0);
+  const increment = () => setCount(n => n + 1);
+  const decrement = () => setCount(n => n - 1);
+  return (
+    <div>
+      <div>{count}</div>
+      <div>
+        <button onClick={increment}>+</button>
+        <button onClick={decrement}>-</button>
+      </div>
+    </div>
+  )
+}
+function Counter2() {
+  const [count, setCount] = useSessionStorageState<number>('count', 0);
+  const increment = () => setCount(n => n + 1);
+  const decrement = () => setCount(n => n - 1);
+  return (
+    <div>
+      <div>{count}</div>
+      <div>
+        <button onClick={increment}>+</button>
+        <button onClick={decrement}>-</button>
+      </div>
+    </div>
+  )
+}
+
+function Test() {
+  const [chats, setChats] = useLocalStorageState<ChatStoreTypes.ChatMessage[]>('cm', []);
+  // localStorage.clear();
   useChatClient({
-    channels: ['lck_korea'],
+    channels: ['doublelift'],
     clientId: Config.Twitch.clientId,
     onceInit: (cc) => {
       cc.on('chat', (channel, userstate, message) => {
         const result = parseEmotes(message, userstate.emotes);
-        console.log(result);
+        setChats(old => {
+          return [...old, result]
+        });
       });
     }
-  })
-  return <>
-    <div></div>
-  </>
+  });
+  return (
+    <ul>
+      {
+        chats.map((e, i) => <Chat key={'item' + i} chat={e} />)
+      }
+    </ul>
+  )
 }
 // function Child() {
 //   const [sample1, setSample1] = usePersistedState<number>('sample1', 7);
