@@ -77,11 +77,11 @@ class GlobalState<S extends Storage> {
   }
 }
 
+// global
 const globalState = {
   local: new GlobalState(window.localStorage),
   session: new GlobalState(window.sessionStorage),
 };
-
 window.addEventListener('storage', evt => {
   const { storageArea, key, newValue } = evt;
   Object.values(globalState).forEach(gs => {
