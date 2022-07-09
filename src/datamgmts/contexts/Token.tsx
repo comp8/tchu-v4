@@ -1,28 +1,35 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
-
-import { getTwitchAuthUrl } from "../../Twitch/api/auth";
 import { validateAccessToken } from "../../Twitch/api/validate-token";
-
+import { useLocalStorageState, useSessionStorageState } from "../../hooks/usePersistentState";
 import Config from '../../config';
-import { useNavigate } from "react-router-dom";
-import { useLocalStorageState } from "../../hooks/usePersistentState";
 
-const TokenContext = createContext<string>(null);
+interface ITokenContext {
+  accessToken: string;
+  isValid: boolean;
+}
+const TokenContext = createContext<ITokenContext>(null);
 
 interface Props {
   children?: React.ReactElement;
+  onInitChannel: (channel: string) => void;
 }
 function TwitchTokenProvider(props: Props) {
-  const navigate = useNavigate();
   const [token, setToken] = useLocalStorageState<string>('token', '');
+  const [isValid, setValidity] = useState<boolean>(true);
 
   const clientId = Config.Twitch.clientId;
+  const { onInitChannel } = props;
 
   useEffect(() => {
     if (token) {
       // validate
       validateAccessToken(token).then(r => {
-        if (!r || !r.user_id) {
+        if (r?.user_id && r.client_id === clientId) {
+          // valid
+          setValidity(true);
+          onInitChannel(r.login);
+        }
+        else {
           // invalid
           if (r?.status >= 400) {
             // has error message
@@ -30,23 +37,22 @@ function TwitchTokenProvider(props: Props) {
           }
           // reset token
           setToken('');
+          setValidity(false);
         }
-      })
+      });
     }
     else {
-      // grant
-      const url = getTwitchAuthUrl({ client_id: clientId, redirect_uri: Config.Twitch.redirectUri, scopes: Config.Twitch.scope, force_verify: false });
-      navigate(url, { replace: true });
+      setValidity(false);
     }
   }, [token]);
 
   return (
-    <TokenContext.Provider value={token}>
+    <TokenContext.Provider value={{ accessToken: token, isValid }}>
       {props.children}
     </TokenContext.Provider>
   );
 }
 
-const useTwitchToken = (): Readonly<string> => useContext(TokenContext);
+const useTwitchToken = () => useContext(TokenContext);
 
 export { TwitchTokenProvider, useTwitchToken };

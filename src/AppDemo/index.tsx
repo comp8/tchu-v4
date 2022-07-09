@@ -80,7 +80,7 @@ function Test() {
   useChatClient({
     channels: ['doublelift'],
     clientId: Config.Twitch.clientId,
-    onceInit: (cc) => {
+    onInit: (cc) => {
       cc.on('chat', (channel, userstate, message) => {
         const result = parseEmotes(message, userstate.emotes);
         setChats(old => {

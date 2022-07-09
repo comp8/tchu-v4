@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 interface Props {
   duration: number;
-  children(t: number): React.ReactElement;
+  children(t: number, done: boolean): React.ReactElement;
 }
 
 export function Transition(props: Props) {
@@ -30,5 +30,5 @@ export function Transition(props: Props) {
     }
   }, []);
 
-  return props.children(t);
+  return props.children(t, t >= 1);
 }

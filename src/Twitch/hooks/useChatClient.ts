@@ -7,7 +7,7 @@ interface Options {
   password?: string;
   clientId: string;
   connectionDelay?: number;
-  onceInit?(client: ChatClient): void;
+  onInit?(client: ChatClient): void;
   debug?: true;
 }
 
@@ -15,7 +15,7 @@ const defaultConnectionDelay = 600;
 
 export function useChatClient(opts: Options, deps: React.DependencyList = []): string | null {
 
-  const { channels, username, password, clientId, onceInit } = opts;
+  const { channels, username, password, clientId, onInit } = opts;
   const connectionDelay = opts.connectionDelay || defaultConnectionDelay;
 
   const [client, setClient] = useState<ChatClient>(null);
@@ -29,7 +29,7 @@ export function useChatClient(opts: Options, deps: React.DependencyList = []): s
       username && password ? { username, password } : null
     ));
 
-    onceInit?.(cc);
+    onInit?.(cc);
 
     const delayedConnect = (delay: number) => setTimeout(() => cc.connect(), delay);
     const timerId = delayedConnect(connectionDelay);

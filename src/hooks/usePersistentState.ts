@@ -1,5 +1,15 @@
 import React, { useCallback, useEffect, useState } from "react";
 
+const parseJSON = (jsonStr: string) => {
+  try {
+    return JSON.parse(jsonStr);
+  }
+  catch (err) {
+    console.warn(err);
+  }
+  return null;
+};
+
 type Callback<T> = (val: T) => void;
 
 class Container<S extends Storage, T = any> {
@@ -13,7 +23,7 @@ class Container<S extends Storage, T = any> {
     this.defaultValue = defaultValue;
     this.subscribers = [];
     this.storage = storage;
-    const storedValue = JSON.parse(this.storage.getItem(key));
+    const storedValue = parseJSON(this.storage.getItem(key));
     this.value = storedValue !== null ? storedValue : defaultValue;
   }
   public getValue(): T {
@@ -87,7 +97,7 @@ window.addEventListener('storage', evt => {
   Object.values(globalState).forEach(gs => {
     if (gs.equalTo(storageArea)) {
       if (key) {
-        gs.setValue(key, JSON.parse(newValue));
+        gs.setValue(key, parseJSON(newValue));
       }
       else {
         gs.onClear();

@@ -2,6 +2,7 @@ import React, { createContext, useCallback, useContext, useEffect, useState } fr
 import { BadgeSets, fetchBadgeSets, fetchUsers } from "../../Twitch";
 import Config from '../../config';
 import { useTwitchToken } from "./Token";
+import { useSessionStorageState } from "../../hooks/usePersistentState";
 
 const ChannelInfoContext = createContext<ChannelInfo>(null);
 
@@ -75,7 +76,7 @@ function ChannelInfoProvider(props: Props) {
   const { channel } = props;
   const [retryCount, setRetryCount] = useState<number>(0);
 
-  const accessToken = useTwitchToken();
+  const { accessToken } = useTwitchToken();
 
   const onError: OnErrorCallback = useCallback((msg, ...args) => {
     console.error(msg, ...args);
