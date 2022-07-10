@@ -23,7 +23,7 @@ export default function App() {
             <Route index element={
               <ChannelInfoProvider channel={channel}>
                 <ChatStoreProvider channel={channel} >
-                  <MainPage />
+                  <MainPage channel={channel} />
                 </ChatStoreProvider>
               </ChannelInfoProvider>
             } />

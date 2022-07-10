@@ -1,4 +1,4 @@
-import React, {  } from "react";
+import React, { } from "react";
 
 import { useTwitchToken } from "../../../datamgmts/contexts";
 import Header from "./Header";
@@ -6,11 +6,14 @@ import NeedLogin from "./NeedLogin";
 
 import { useChannelName } from "../../hooks/useChannelName";
 import Chat from "./Chat";
+import Vote from "./Vote";
 
-export default function MainPage() {
+interface Props {
+  channel: string;
+}
+export default function MainPage({ channel }: Props) {
 
   const { isValid: isValidToken } = useTwitchToken();
-  const [channel] = useChannelName();
 
   if (!isValidToken) {
     return <NeedLogin />;
@@ -19,6 +22,7 @@ export default function MainPage() {
   return (
     <div>
       <Header />
+      <Vote />
       <Chat />
     </div>
   );
